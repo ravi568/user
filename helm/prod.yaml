@@ -6,6 +6,16 @@ schemaLoadJob:
   create: true
   type: mongo
 
+
+resources:
+  limits:
+    cpu: 300m
+    memory: 350Mi
+  requests:
+    cpu: 200m
+    memory: 256Mi
+
+
 #  Environment=DOCUMENTDB={{ lookup('amazon.aws.aws_ssm', '{{env}}.{{component}}.mongo', region='us-east-1')}}
 #  Environment=REDIS_HOST={{ lookup('amazon.aws.aws_ssm', '{{env}}.elasticache.endpoint', region='us-east-1')}}
 #  Environment=MONGO_URL="{{ lookup('amazon.aws.aws_ssm', '{{env}}.docdb.url.{{component}}', region='us-east-1')}}"
